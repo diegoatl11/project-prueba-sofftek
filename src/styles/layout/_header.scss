@@ -1,0 +1,23 @@
+.header {
+  background-color: transparent;
+  height: 64px;
+  &__container {
+    height: auto;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    height: 36px;
+    width: 73.19px;
+  }
+
+  &__logo a,
+  &__contact a {
+    display: inline-block;
+  }
+}

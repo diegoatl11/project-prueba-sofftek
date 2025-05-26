@@ -1,0 +1,168 @@
+.plans {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9ff;
+  color: #141938;
+  min-height: 100vh;
+
+  &__progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #edeffc;
+  }
+
+  &__step {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-weight: bold;
+    background: #d7dbf5;
+    color: #5b5fef;
+
+    &--active {
+      background: #5b5fef;
+      color: white;
+    }
+  }
+
+  &__divider {
+    width: 40px;
+    height: 2px;
+    background: #d7dbf5;
+    margin: 0 10px;
+  }
+
+  &__content {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  &__back {
+    background: none;
+    border: none;
+    color: #5b5fef;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: #676f8f;
+    margin-bottom: 2rem;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 260px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 0.2s ease;
+    border: 2px solid transparent;
+
+    &--selected {
+      border-color: #5b5fef;
+    }
+  }
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+    margin: 0 auto 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &--me {
+      background-image: url("/icon-me.svg");
+    }
+
+    &--other {
+      background-image: url("/icon-other.svg");
+    }
+  }
+
+  &__card-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &__card-text {
+    font-size: 0.875rem;
+    color: #676f8f;
+    margin-top: 0.5rem;
+  }
+
+  &__carousel {
+    margin-top: 3rem;
+  }
+
+  &__plan-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 0 0.5rem;
+    text-align: left;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    min-height: 360px;
+    position: relative;
+  }
+
+  &__plan-badge {
+    background-color: #d9f2e9;
+    color: #1a7f5a;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  &__plan-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  &__plan-price {
+    color: #1a1f36;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__plan-benefits {
+    padding-left: 1rem;
+    list-style-type: disc;
+    color: #4a4f63;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  &__plan-button {
+    background-color: #ff0050;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
