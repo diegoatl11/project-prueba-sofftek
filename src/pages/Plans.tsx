@@ -5,6 +5,8 @@ import { type OptionKey, cardOptions } from "../constants/Plans/cardOptions";
 import { type Plan } from "../types/plan";
 import { labelPlans } from "../constants/Plans/plans";
 import StepIndicator from "../components/StepIndicator";
+import Back from "../assets/image/buttonback.png";
+import { planIcons } from "../constants/Plans/planIcons";
 import Slider from "react-slick";
 
 const sliderSettings = {
@@ -16,6 +18,12 @@ const sliderSettings = {
   responsive: [
     {
       breakpoint: 960,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+    {
+      breakpoint: 600,
       settings: {
         slidesToShow: 1,
       },
@@ -97,10 +105,17 @@ const Plans = () => {
     navigate("/resume");
   };
 
+  const handleBack = () => navigate("/");
+
   return (
     <div className="plans">
       <div className="plans__content">
         <StepIndicator currentStep={1} />
+
+        <button className="plans__back" onClick={handleBack}>
+          <img src={Back} alt="back_home" />
+        </button>
+
         <h1 className="plans__title">
           {name}, {labelPlans.tittle}
         </h1>
@@ -117,7 +132,11 @@ const Plans = () => {
                 }`}
                 onClick={() => setSelectedOption(key)}
               >
-                <div className={`plans__icon plans__icon--${key}`} />
+                <img
+                  className={`plans__icon plans__icon--${key}`}
+                  src={planIcons[key]}
+                  alt={`${key}_icon`}
+                />
                 <h3 className="plans__card-title">{title}</h3>
                 <p className="plans__card-text">{text}</p>
               </div>
@@ -136,6 +155,7 @@ const Plans = () => {
                     </div>
                   )}
                   <h4 className="plans__plan-title">{plan.name}</h4>
+
                   <p className="plans__plan-price">${plan.price} al mes</p>
                   <ul className="plans__plan-benefits">
                     {plan.benefits.map((benefit, index) => (
