@@ -95,12 +95,12 @@ const Home = () => {
                         name="docNumber"
                         placeholder="Nro. de documento"
                       />
-                      <ErrorMessage
-                        name="docNumber"
-                        component="div"
-                        className="error"
-                      />
                     </div>
+                    <ErrorMessage
+                      name="docNumber"
+                      component="div"
+                      className="error"
+                    />
 
                     <Field type="text" name="phone" placeholder="Celular" />
                     <ErrorMessage
