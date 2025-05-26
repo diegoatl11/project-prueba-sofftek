@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { labelResume } from "../constants/Resume/resume";
 import { defaultPlan, defaultUser } from "../constants/Resume/data";
 import StepIndicator from "../components/StepIndicator";
-
+import family from "../assets/image/Resume/family.png";
+import Back from "../assets/image/buttonback.png";
 const Resume = () => {
   const [user, setUser] = useState(defaultUser);
   const [plan, setPlan] = useState(defaultPlan);
@@ -43,37 +44,42 @@ const Resume = () => {
   return (
     <div className="resume">
       <StepIndicator currentStep={2} />
-      <button className="resume__back" onClick={handleBack}>
-        {labelResume.back}
-      </button>
+      <div className="resume__container">
+        <button className="resume__back" onClick={handleBack}>
+          <img src={Back} alt="back_home" />
+        </button>
 
-      <h2 className="resume__title">{labelResume.title}</h2>
+        <h2 className="resume__title">{labelResume.title}</h2>
 
-      <div className="resume__card">
-        <p className="resume__label">{labelResume.subtitle}</p>
+        <div className="resume__card">
+          <p className="resume__label">{labelResume.subtitle}</p>
 
-        <div className="resume__user">
-          <span className="resume__user-name">
-            {user.name} {user.lastName}
-          </span>
-        </div>
+          <div className="resume__user">
+            <img className="resume__icon" src={family} alt="contact_prueba" />
+            <span className="resume__user-name">
+              {user.name} {user.lastName}
+            </span>
+          </div>
 
-        <div className="resume__section">
-          <h3 className="resume__section-title">{labelResume.responsible}</h3>
-          <p>
-            {user.docType}: {user.docNumber}
-          </p>
-          <p>
-            {labelResume.phone}: {user.phone}
-          </p>
-        </div>
+          <div className="resume__border"></div>
 
-        <div className="resume__section">
-          <h3 className="resume__section-title">{labelResume.planChosen}</h3>
-          <p>{plan.name}</p>
-          <p>
-            {labelResume.resumePrice}: {plan.price}
-          </p>
+          <div className="resume__section">
+            <h3 className="resume__section-title">{labelResume.responsible}</h3>
+            <p>
+              {user.docType}: {user.docNumber}
+            </p>
+            <p>
+              {labelResume.phone}: {user.phone}
+            </p>
+          </div>
+
+          <div className="resume__section">
+            <h3 className="resume__section-title">{labelResume.planChosen}</h3>
+            <p>{plan.name}</p>
+            <p>
+              {labelResume.resumePrice}: {plan.price}
+            </p>
+          </div>
         </div>
       </div>
     </div>

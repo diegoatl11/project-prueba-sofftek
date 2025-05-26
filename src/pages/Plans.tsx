@@ -33,7 +33,7 @@ const sliderSettings = {
 
 const Plans = () => {
   const [selectedOption, setSelectedOption] = useState<OptionKey | null>(null);
-  const [name, setName] = useState("Usuario");
+  const [name, setName] = useState("User");
   const [plans, setPlans] = useState<Plan[]>([]);
   const navigate = useNavigate();
 
@@ -154,12 +154,25 @@ const Plans = () => {
                       {labelPlans.recomended}
                     </div>
                   )}
-                  <h4 className="plans__plan-title">{plan.name}</h4>
+                  <div className="plans__plan-init">
+                    <h4 className="plans__plan-title">{plan.name}</h4>
+                    <img
+                      className="plans__plan-icon"
+                      src={planIcons[plan.id]}
+                      alt={`${plan.id}_icon`}
+                    />
+                  </div>
+                  <div className="plans__plan-content-price">
+                    <p className="plans__plan-title-price">Costo del Plan</p>
+                    <p className="plans__plan-price">${plan.price} al mes</p>
+                  </div>
 
-                  <p className="plans__plan-price">${plan.price} al mes</p>
+                  <p className="plans__plan-border"></p>
                   <ul className="plans__plan-benefits">
                     {plan.benefits.map((benefit, index) => (
-                      <li key={index}>{benefit}</li>
+                      <li className="plans__plan-li" key={index}>
+                        {benefit}
+                      </li>
                     ))}
                   </ul>
                   <button
